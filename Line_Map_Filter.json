@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/AdishwarVerma/Assignment2-Fit3179/main/File5.csv"
+  },
+  "params": [
+    {
+      "name": "STATE_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "ACT",
+          "New South Wales",
+          "Northern Territory",
+          "Queensland",
+          "South Australia",
+          "Victoria",
+          "Western Australia"
+        
+        ],
+        "labels": [
+          "Show All",
+          "ACT",
+          "New South Wales",
+          "Northern Territory",
+          "Queensland",
+          "South Australia",
+          "Victoria",
+          "Western Australia"
+        ],
+        "name": "SELECT STATE: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "STATE_selection == null || datum.State == STATE_selection"}
+  ],
+  "selection": {
+    "State_highlight": {"type": "multi", "fields": ["State"], "bind": "legend"}
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": "YEAR"},
+    "y": {
+      "field": "Total_Trips",
+      "type": "quantitative",
+      "title": "TOTAL TRIPS RECORDED",
+      "axis": {"grid": false}
+    },
+    "color": {
+      "condition": {
+        "selection": "State_highlight",
+        "field": "State",
+        "type": "nominal"
+      }
+    },
+    "opacity": {
+      "condition": {"selection": "State_highlight", "value": 0.9},
+      "value": 0.1
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "year", "type": "nominal"},
+      {"field": "Total_Trips", "type": "quantitative","format":",.2f"}
+    ]
+  },
+  "config": {"view": {"stroke": "transparent"}}
+}

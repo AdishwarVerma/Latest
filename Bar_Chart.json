@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 500,
+    "height": 500,
+    "data": {
+      "url": "https://raw.githubusercontent.com/AdishwarVerma/Assignment2-Fit3179/main/For_Bar.csv"
+    },
+    "encoding": {
+        "y":{"field":"State","type":"nominal","title":"STATES","sort":"-x"}
+        ,"x":{"type":"quantitative","field":"Trips","title":"Number of Trips"}
+    
+    },
+    "layer": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "color": {
+              "field": "State",
+              "type": "nominal",
+              "title": "STATE",
+              "legend": "STATE"
+        },"tooltip": [
+            {"field": "State", "type": "nominal"},
+            {"field": "Trips", "type": "nominal", "title": "Total Trips","format": ",.2f"}
+            
+          ]
+    }
+}]
+}

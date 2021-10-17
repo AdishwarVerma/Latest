@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 500,
+    "height": 500,
+    "description": "A simple pie chart with embedded data.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/AdishwarVerma/Assignment2-Fit3179/main/For_Pie.csv"
+    },
+    
+    "encoding": {
+      "theta": {"field": "Trips", "type": "quantitative", "stack": true},
+      "text": {"field": "Trips", "type": "quantitative", "format": ",.2f"},
+      "color": {
+        "field": "Purpose",
+        "type": "nominal",
+        "legend": {
+          "orient": "none",
+          "direction": "vertical",
+          "legendX": 550,
+          "legendY": 50,
+          "title": "Purpose"
+        }
+      },
+      "opacity": {"condition": {"selection": "a1", "value": 0.9}, "value": 0.1},
+
+      "tooltip": [
+        {"field": "Purpose", "type": "nominal"},
+        {"field": "Trips", "type": "nominal","format": ",.2f"}
+      ]
+    },
+    "layer": [
+      {
+        "mark": {"type": "arc", "outerRadius": 250},
+        "selection": {
+          "a1": {"type": "multi", "fields": ["Purpose"], "bind": "legend"}
+        }
+      },
+      {
+        "mark": {"type": "text", "radius": 280},
+        "encoding": {"text": {"field": "Trips", "type": "nominal"}}
+      }
+    ],
+    "config": {"view": {"stroke": "transparent"}}
+  }

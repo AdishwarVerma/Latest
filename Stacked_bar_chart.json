@@ -1,0 +1,57 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 500,
+    "height": 500,
+    "data": {
+      "url": "https://raw.githubusercontent.com/AdishwarVerma/Assignment2-Fit3179/main/File4.csv"
+    },
+    "transform": [
+        {
+          "fold": [
+            "Business",
+            "Holiday",
+            "Other",
+            "Visiting"
+          ]
+        }
+      ],
+      "selection": {
+        "filter": {"type": "multi", "fields": ["key"], "bind": "legend"}
+      },
+      "mark": "bar",
+      "encoding": {
+        "x": {"field": "State", "type": "nominal", "title": "STATE","sort":"-y"},
+        "y": {
+          "field": "Total_Trips",
+          "type": "quantitative",
+          "title": "Total number of Trips Per Category"
+        },
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "title": "Category"
+        },
+        "opacity": {
+          "condition": {"selection": "filter", "value": 0.9},
+          "value": 0.1
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal"},
+          {"field": "Business", "type": "quantitative", "format": ",.2f"},
+          {"field": "Holiday", "type": "quantitative", "format": ",.2f"},
+          {"field": "Other", "type": "quantitative", "format": ",.2f"},
+          {"field": "Visiting", "type": "quantitative", "format": ",.2f"},
+          {
+            "field": "Total_Trips",
+            "type": "quantitative",
+            "format": ",.2f",
+            "title": "Total"
+          }
+        ]
+      },
+      "config": {"view": {
+         "stroke": "transparent"
+      }}
+    }
+    
+    

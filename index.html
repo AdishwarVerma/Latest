@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tourism In Australia By States</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fondamento&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
+
+<style>
+    h1{
+        color: indigo;
+        align-self: center;
+        font-size: 50px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+    h2{
+        color: rgb(142, 103, 170);
+        align-self: center;
+        text-align: center;
+        padding-top: 50px;
+        font-family: sans-serif;
+    }
+    h3{
+        color: rgb(142, 103, 170);
+        align-self: center;
+        text-align: center;
+        padding-top: 50px;
+        font-family: sans-serif;
+    }
+    
+    
+    #vis1{
+        
+        padding-left: 200px;
+        
+        
+    }
+    #vis3{
+    
+      padding-left: 200px;
+        
+
+    }
+    #vis5{
+        
+      padding-left: 200px;
+        
+}
+
+    #vis2{
+      padding-left: 200px;
+} 
+        
+    #vis4{
+      padding-left: 200px;
+}
+
+    
+   
+    
+    p{  align-self: center;
+        text-align: center;
+        font-family: sans-serif;
+        padding-top: 50px;
+        color: rgb(228, 156, 23);
+    }
+</style>
+</head>
+<body>
+
+ <div class="page">
+
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Toursim In Australia</h1>
+        <h2>This page demonstrates how toursim has changed in the states of Australia over the period of 18 Years.</h2>
+
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Australian Overview</h2>
+            <p>Australia is abundant with unique experiences and awe-inspiring landscapes. There’s a well-known vibrancy in its natural beauty, but don’t forget to seek out its history and culture as well. There's plenty here to inspire your future travel plans so, go on, take a look around and let yourself dream of all the possibilities.. </p>
+            
+
+
+            <h3>
+                Tourism's Impact On Economy
+            </h3>
+            <p>Tourism in Australia is an important part of the Australian economy, and consists of domestic and international components. In the financial year 2014/15, tourism represented 3.0% of Australia's GDP contributing A$47.5 billion to the national economy
+
+            </p>
+        </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+     <!-- pure grid group -->
+     <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Different Types of toursim In Australia</h2>
+            <p>Here in this part we visualise the different sectors of toursim in Australia.Which gives us a better view of toursim with the help of a Pie Chart.And it clearly shows that
+              Holiday is the most famous type of Tourism in Australia
+            </p>
+
+        </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis2" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Total Tourism in Australia by each state</h2>
+            <p>On the visualisation on the right we can clearly see.What states have the highest and the lowest toursim.
+              According to which "NSW" has the highest number of tourism and "ACT" has the lowest 
+
+            </p>
+        </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis3" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+     <!-- pure grid group -->
+     <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Different Types of Toursim in Australia By Different States</h2>
+            <p>Here in this part we visualise the different sectors of toursim in Australia.In Different states in australia to understand which all states have importance in which type of tourism
+              .Here withe the help of a Stacked Bar chart we can clearly see that "NSW" Has the highest number of Holiday Toursim in contrast with "ACT" which has Visiting as its highest Tourism.  
+            </p>
+>
+
+        </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis4" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Change in Tourism by state by year</h2>
+            <p>Here in this part we visualise how tourism has changed in past 18 Years in diffrent states.And also comparing them with the help of a line chart.A filter has been given for the user to select the state 
+              which the user wants to see the change over time in tourism.
+            </p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis5" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+  
+  
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://www.linkedin.com/in/adishwar-verma-b2b65b173/" style="color:#14bb7b" target="_blank">Adishwar Verma</a>. The datasource is <a href="https://www.kaggle.com/luisblanche/quarterly-tourism-in-australia"style="color:#14bb7b" target="_blank">kaggle.datasets</href>.</p>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+   
+  <script type="text/javascript">
+    var specVis1 = "./Australia_Map.json";
+    var specVis2= "./Pie_chart.json";
+    var specVis3="./Bar_Chart.json"
+    var specVis4="./Stacked_bar_chart.json"
+    var specVis5="./Line_Map_Filter.json"
+  
+    vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://github.com/AdishwarVerma/3179-testrepo/blob/main/Map.json) as result.view
+    }).catch(console.error);
+    
+     vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://github.com/AdishwarVerma/3179-testrepo/blob/main/Pie.json) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://github.com/AdishwarVerma/3179-testrepo/blob/main/Bar.json) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://github.com/AdishwarVerma/3179-testrepo/blob/main/Stacked_bar.json) as result.view
+    }).catch(console.error);
+    vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://github.com/AdishwarVerma/3179-testrepo/blob/main/Line_filter.json) as result.view
+    }).catch(console.error);
+
+  </script>
+  </body>
+  </html>
